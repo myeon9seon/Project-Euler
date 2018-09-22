@@ -89,3 +89,32 @@ int main(void) {
 	end = clock();
 	cout << "execution time: " << end - begin << "ms" << endl;
 }
+
+// Solution 3: using Euclidean algorithm
+// execution time: 1ms
+
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+const int MAX = 20;
+
+int GCD(int a, int b) {
+	return b ? GCD(b, a % b) : a;
+}
+
+// parameters must have __int64 type because of overflow
+int LCM(__int64 a, __int64 b) {
+	return (a * b / GCD(a, b));
+}
+
+int main(void) {
+	clock_t begin = clock(), end;
+	int result = 1;
+	for (int i = 2; i <= MAX; i++)
+		result = LCM(result, i);
+	cout << result << endl;
+
+	end = clock();
+	cout << "execution time: " << end - begin << "ms" << endl;
+}
