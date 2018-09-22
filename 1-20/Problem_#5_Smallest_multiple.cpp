@@ -5,7 +5,7 @@
 #include <ctime>
 using namespace std;
 
- const int MAX = 20;
+const int MAX = 20;
 
 int main(void) {
 	clock_t begin = clock(), end;
