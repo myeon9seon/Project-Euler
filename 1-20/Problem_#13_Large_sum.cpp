@@ -131,11 +131,13 @@ int main(void) {
 		for (int col = 0; col < COL; col++)
 			sum += charToInt(NUM[col][row]);
 		sum += carry;
-		if (row == 0)
+		if (row == 0) {
 			result[row] = sum;
-		else
+		}
+		else {
 			result[row] = sum % 10;
-		carry = sum / 10;
+			carry = sum / 10;
+		}
 	}
 	for (int i = 0; i < ROW; i++)
 		cout << result[i];
