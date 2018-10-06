@@ -4,7 +4,7 @@ using namespace std;
 
 typedef struct _LetterOfNum { int _1_19[19], _20_90[8], _100, and; } Letter;
 
-void getEngNumLen(Letter *num) {
+void setEngNumLen(Letter *num) {
 	char str1_19[19][10] = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
 		"eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
 	char str20_90[8][8] = { "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
@@ -24,7 +24,7 @@ int main(void) {
 	Letter num;
 	int sum = 0;
 
-	getEngNumLen(&num);
+	setEngNumLen(&num);
 	for (int i = 1; i <= 1000; i++) {
 		// 1~19
 		if (i >= 1 && i <= 19)
