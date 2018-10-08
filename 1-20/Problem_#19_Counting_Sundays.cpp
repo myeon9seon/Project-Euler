@@ -49,12 +49,12 @@ public:
 
 int main() {
 	int count = 0;
-	Date date(1900, 1, 1);				// 1900년 1월 1일
-	for (int day = 1; ; day++) {		// 월요일(1)부터 시작
-		if (date.getYear() >= 1901) {	// 1901년부터
-			if (date.getDay() == 1) {	// 매월 1일인
-				if (day % 7 == 0)		// 일요일(7의 배수)의
-					count++;			// 개수
+	Date date(1900, 1, 1); // 1900년 1월 1일
+	for (int day = 1; ; day++) { // 월요일(1)부터 시작
+		if (date.getYear() >= 1901) { // 1901년부터
+			if (date.getDay() == 1) { // 매월 1일인
+				if (day % 7 == 0) // 일요일(7의 배수)의
+					count++; // 개수
 			}
 		}
 		if (date.isDate(2000, 12, 31))
