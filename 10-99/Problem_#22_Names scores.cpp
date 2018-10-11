@@ -96,8 +96,12 @@ int main() {
 	for (int i = 0; i < MAX_NAME; i++)
 		name[i] = new char[MAX_STRING];
 	
-	loadNameFromTxtFile(name, &count);
-	cout << sumNameScore(name, count) << endl;
+	if(loadNameFromTxtFile(name, &count))
+		cout << sumNameScore(name, count) << endl;
+	else {
+		_sleep(3000);
+		return -1;
+	}
 
 	t.printRunTime();
 	for (int i = 0; i < MAX_NAME; i++)
