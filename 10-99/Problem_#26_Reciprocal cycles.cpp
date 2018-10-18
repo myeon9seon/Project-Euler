@@ -40,7 +40,7 @@ int countReciprocalCycle(int *num) {
 			// 부분 집합 초기화
 			for (int k = 0; k < subCnt; k++)
 				subset[k] = num[i + k];
-			// 자신을 제외하고(k = subCnt) 같은 원소를 가지지 않으며(k += subCnt)
+			// 자신을 제외하고(k = i + subCnt) 같은 원소를 가지지 않으며(k += subCnt)
 			// 내용(isSame)과 크기(subCnt)가 같은 부분 집합이 연속되는지 확인 
 			for (int k = i + subCnt; k < len; k += subCnt) {
 				// 비교할 부분 집합 초기화
@@ -48,8 +48,10 @@ int countReciprocalCycle(int *num) {
 					target[m] = num[k + m];
 				// 같은 부분 집합이 연속된다면 부분 집합의 크기(순환 마디의 길이)를 리턴
 				if (isSame(subset, target, subCnt))
-					if (isReciprocal(num, subset, subCnt, k))
+					if (isReciprocal(num, subset, subCnt, k)) {
+						delete[] subset, target;
 						return subCnt;
+					}
 					else
 						break;
 				else
