@@ -4,7 +4,7 @@
 #include "Time.h"
 using namespace std;
 
-typedef struct _quadratic {	int a, b, n = 0; } Quadratic;
+typedef struct _quadratic { int a, b, n = 0; } Quadratic;
 
 const int MAX = 999;
 const int PRIME_MAX = 20000;
