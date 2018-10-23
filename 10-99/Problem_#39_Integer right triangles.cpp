@@ -25,7 +25,6 @@ int main() {
 					if (len > MAX) break;
 					if (isRightAngled(a, b, c))
 						triLen[len]++;
-						//cout << a << ',' << b << ',' << c << ": " << len << endl;
 				}
 			}
 		}
