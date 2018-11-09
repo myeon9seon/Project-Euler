@@ -308,6 +308,7 @@ private:
 			return 2;
 	}
 public:
+	bool isDataExist() { return m_isDataExist; }
 	void printGameData() {
 		int countPlayer1 = 0;
 		for (int i = 0; i < GAME_COUNT; i++)
@@ -320,6 +321,7 @@ public:
 int main() {
 	Time t;
 	Poker p;
-	p.printGameData();
+	if (p.isDataExist())
+		p.printGameData();
 	t.printRunTime();
 }
