@@ -7,6 +7,7 @@ private:
 	int m_range, m_len;
 	bool m_isAvailable;
 public:
+	Number();
 	Number(int len, int num);
 	Number(const Number& copy);
 	~Number();
@@ -19,6 +20,8 @@ public:
 	void setNumber(int index, int num);
 public:
 	void init(int num);
+	void init(int range, int num);
+	void init(const Number& copy);
 	void print() const;
 };
 
@@ -32,5 +35,6 @@ public:
 	void setNumber(const Number& num);
 public:
 	void sum(Number num);
+	void multiply(Number num);
 	void print() const;
 };
